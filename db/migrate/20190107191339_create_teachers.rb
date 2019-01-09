@@ -6,8 +6,9 @@ class CreateTeachers < ActiveRecord::Migration[5.2]
       t.integer :age
       t.integer :salary
       t.string :subject
+      
 
       t.timestamps
-    end
+    end 
   end
 end

@@ -1,4 +1,3 @@
 class Student < ApplicationRecord
-    has_many :teachers, :through => :cohort
-    
+    has_and_belongs_to_many :teachers  
 end
