@@ -1,0 +1,10 @@
+<h1>Cohorts</h1>
+ 
+
+ <div>
+    <% @cohorts.each do |cohort| %>
+        <h3> <%= cohort.name %> </h3>
+        <p> <%= cohort.start_date %> </p>
+        <p> <%= cohort.end_date %> </p>
+    <% end %>
+ </div>
