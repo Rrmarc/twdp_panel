@@ -9,6 +9,14 @@ class CohortsController < ApplicationController
     end
 
     def edit
+      @cohorts = Cohort.find(params[:id])
+    end
+
+    def update
+      raise params.inspect
+      @cohorts = Cohort.find(params[:id])
+      @cohorts.update(name: params[:name], start_date: params[:start_date], end_date: params[:end_date])
+      redirect_to cohorts_path(@cohorts)
     end
 
     def destroy

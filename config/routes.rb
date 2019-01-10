@@ -10,9 +10,14 @@ Rails.application.routes.draw do
   
   # cohorts__________
   root to: 'cohorts#index'
+  get '/cohorts' =>'cohorts#index'
   post '/cohorts' => 'cohorts#create'
   get '/cohorts/:id' => 'cohorts#destroy'
-  get '/cohorts' =>'cohorts#index'
+  get '/cohorts/:id/edit' =>'cohorts#edit', as: :edit_cohort
+  post '/cohorts/:id/edit' => 'cohorts#index' 
+  
+  patch '/cohorts/:id/edit' => 'cohorts#update' 
+
 
 # courses___________
   get '/courses' =>'courses#index'
