@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   # get 'cohorts/destroy'
   
   root to: 'cohorts#index'
+  post '/cohorts' => 'cohorts#create'
+  get '/cohorts/:id' => 'cohorts#destroy'
+
+
   get '/cohorts' =>'cohorts#index'
   get '/courses' =>'courses#index'
   get '/students' =>'students#index'
