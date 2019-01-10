@@ -1,4 +1,7 @@
 class CohortsController < ApplicationController
+  before_action :require_login
+  skip_before_action :require_login, only: [:index]
+
     def index
       @cohorts = Cohort.all
     end
@@ -10,7 +13,7 @@ class CohortsController < ApplicationController
 
     def edit
       @cohorts = Cohort.find(params[:id])
-      
+
     end
 
     def update

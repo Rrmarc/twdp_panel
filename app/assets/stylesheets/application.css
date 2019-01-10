@@ -50,6 +50,9 @@ header h1{
      background: 
  }
 
+ input{
+     color:black;
+ }
  #content{
      
      position: absolute;

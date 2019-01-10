@@ -1,4 +1,6 @@
 class TeachersController < ApplicationController
+  before_action :require_login
+  skip_before_action :require_login, only: [:index]
   def index
     @teachers = Teacher.all
   end
