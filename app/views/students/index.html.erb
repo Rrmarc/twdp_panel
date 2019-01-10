@@ -1,21 +1,45 @@
 <h1>Participants</h1>
 
-<form action="/students" method=POST>
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-        <input name="name">
-        <input name="last_name">
-        <input name="age">
-        <input name="education_level">
-        <button>Submit</button>
-</form>
+<div class= "add_new">
+    <form action="/students" method=POST>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            <p>First Name</p>
+            <input name="name">
+            <p>Last Name</p>
+            <input name="last_name">
+            <p>Age</p>
+            <input name="age">
+            <p>Highest Education Level</p>
+            <input name="education_level">
+            <button>Submit</button>
+    </form>
+</div> 
 
- <div>
-    <% @students.each do |student| %>
-        <h3> <%= student.name %> </h3>
-        <p> <%= student.last_name %> </p>
-        <p> <%= student.age %> </p>
-        <p> <%= student.education_level %> </p>
-        <a href="/students/<%= student.id %>"> DELETE</a>
-        <a href="/students/<%= student.id %>/edit"> EDIT</a>
-    <% end %>
- </div>
+<br>
+
+ <table class="table">
+ <thead>
+    <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+        <th>Highest Education Level</th>
+    </tr>
+    </thead>
+
+    <tbody>
+        <% @students.each do |student| %>
+            <tr>
+                <td><%= student.name %></td>
+                <td><%= student.last_name %></td>
+                <td><%= student.age %></td>
+                <td><%= student.education_level %></td>
+                <td><a href="/students/<%= student.id %>"> DELETE</a></td>
+                <td><a href="/students/<%= student.id %>/edit"> EDIT</a></td>
+            </tr>
+        <% end %>    
+    </tbody>
+     
+</table>
+
+<a class="show_form">ADD NEW STUDENT</a>

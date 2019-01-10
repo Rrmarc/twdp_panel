@@ -2,17 +2,38 @@
 
 <form action="/courses" method=POST>
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+       <p>Subject</p>
         <input name="subject">
+        <p>Time Completion</p>
         <input name="time_completion">
+        <p>Description</p>
         <input name="description">
         <button>Submit</button>
 </form>
 
-<div>
-    <% @courses.each do |course| %>
-        <h3> <%= course.subject %> </h3>
-        <p> <%= course.time_completion %> </p>
-        <p> <%= course.description %> </p>
-        <a href="/courses/<%= course.id %>"> DELETE</a>
-    <% end %>
- </div>
+ <br>
+
+ <table class="table">
+ <thead>
+    <tr>
+        <th>Subject</th>
+        <th>Time Completion</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+        <% @courses.each do |course| %>
+            <tr>
+                <td><%= course.subject %></td>
+                <td><%= course.time_completion %></td>
+                <td><%= course.description%></td>
+                <td><a href="/courses/<%= course.id %>"> DELETE</a></td>
+                <td><a href="/courses/<%= course.id %>/edit"> EDIT</a></td>
+            </tr>
+        <% end %>    
+    </tbody>
+     
+</table>
+
+<a class="show_form">ADD NEW COURSE</a>

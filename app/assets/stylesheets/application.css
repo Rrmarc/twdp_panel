@@ -20,6 +20,9 @@
      position:relative;
      top:0;
      left:0;
+     border: 1px solid;
+     padding: 10px;
+     box-shadow: ;
  }
 
  #content{
@@ -28,4 +31,8 @@
      right:10%;
      float:right;
      width:60%;
+ }
+
+ .add_new{
+     /* display:none; */
  }
