@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'students/index'
+  get 'students/create'
+  get 'students/edit'
+  get 'students/update'
+  get 'students/destroy'
   # get 'courses/index'
   # get 'courses/create'
   # get 'courses/edit'
@@ -27,6 +32,8 @@ Rails.application.routes.draw do
 
   # students__________
   get '/students' =>'students#index'
+  post '/students' => 'students#create'
+  get '/students/:id' => 'students#destroy'
 
 
 

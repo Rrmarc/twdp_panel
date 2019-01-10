@@ -1,0 +1,21 @@
+<h1>Students</h1>
+
+<form action="/students" method=POST>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <input name="name">
+        <input name="last_name">
+        <input name="age">
+        <input name="education_level">
+        <button>Submit</button>
+</form>
+
+ <div>
+    <% @students.each do |student| %>
+        <h3> <%= student.name %> </h3>
+        <p> <%= student.last_name %> </p>
+        <p> <%= student.age %> </p>
+        <p> <%= student.education_level %> </p>
+        <a href="/students/<%= student.id %>"> DELETE</a>
+        <a href="/students/<%= student.id %>/edit"> EDIT</a>
+    <% end %>
+ </div>
