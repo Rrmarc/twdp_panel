@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get '/cohorts' =>'cohorts#index'
   post '/cohorts' => 'cohorts#create'
   get '/cohorts/:id' => 'cohorts#destroy'
-  get '/cohorts/:id/edit' =>'cohorts#edit', as: :edit_cohort
+  get '/cohorts/:id/edit' =>'cohorts#edit'
   post '/cohorts/:id/edit' => 'cohorts#index' 
   
   patch '/cohorts/:id/edit' => 'cohorts#update' 

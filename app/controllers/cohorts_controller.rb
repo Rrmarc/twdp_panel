@@ -10,6 +10,7 @@ class CohortsController < ApplicationController
 
     def edit
       @cohorts = Cohort.find(params[:id])
+      
     end
 
     def update

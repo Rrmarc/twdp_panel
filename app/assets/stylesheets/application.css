@@ -13,26 +13,56 @@
  *= require_tree .
  *= require_self
  */
+*{
+    margin:0;
+    padding: 0;
+}
+
+body{
+    background: rgba(20, 30, 30, 0.94);
+    color:white;
+}
+
+header{
+    width: 100%;
+    height:100%;
+    background: rgba(3, 154, 5, 0.94);  
+}
+
+header h1{
+    width: 100%;
+    
+}
 
  nav{
-     width:18em;
+     width:17em;
      height: 100vh;
      position:relative;
      top:0;
      left:0;
      border: 1px solid;
      padding: 10px;
-     box-shadow: ;
+     box-shadow:5px 10px rgba(25, 88, 188, 0.56);
+ }
+
+ header{
+     width:100%;
+     background: 
  }
 
  #content{
+     
      position: absolute;
      top:80px;
-     right:10%;
+     right:5%;
      float:right;
      width:60%;
  }
 
  .add_new{
      /* display:none; */
+ }
+
+ button{
+     color:rgba(3, 154, 5, 0.94);
  }

@@ -2,18 +2,39 @@
 
 <form action="/cohorts" method=POST>
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <p>Cohort Name</p>
         <input name="name">
+        <p>Start Year</p>
         <input name="start_date">
+        <p>End Year</p>
         <input name="end_date">
         <button>Submit</button>
 </form>
 
- <div>
-    <% @cohorts.each do |cohort| %>
-        <h3> <%= cohort.name %> </h3>
-        <p> <%= cohort.start_date %> </p>
-        <p> <%= cohort.end_date %> </p>
-        <a href="/cohorts/<%= cohort.id %>"> DELETE</a>
-        <a href="/cohorts/<%= cohort.id %>/edit"> EDIT</a>
-    <% end %>
- </div>
+
+ <br>
+
+ <table class="table">
+ <thead>
+    <tr>
+        <th>Cohort Name</th>
+        <th>Start Year</th>
+        <th>End Year</th>
+    </tr>
+    </thead>
+
+    <tbody>
+        <% @cohorts.each do |cohort| %>
+            <tr>
+                <td><%= cohort.name %></td>
+                <td><%= cohort.start_date %></td>
+                <td><%= cohort.end_date%></td>
+                <td><a href=/cohorts/<%= cohort.id %>"> DELETE</a></td>
+                <td><a href=/cohorts/<%= cohort.id %>/edit"> EDIT</a></td>
+            </tr>
+        <% end %>    
+    </tbody>
+     
+</table>
+
+<a class="show_form">ADD NEW STUDENT</a>
