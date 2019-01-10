@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+https://learn.co/lessons/rails-edit-update-action-readme

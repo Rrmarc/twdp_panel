@@ -1,2 +1,25 @@
-<h1>Teachers#index</h1>
-<p>Find me in app/views/teachers/index.html.erb</p>
+<h1>Teaching Artist</h1>
+
+
+
+<form action="/teachers" method=POST>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <input name="name">
+        <input name="last_name">
+        <input name="age">
+        <input name="salary">
+        <input name="subject">
+        <button>Submit</button>
+</form>
+
+
+<div>
+    <% @teachers.each do |teacher| %>
+        <h3> <%= teacher.name %> </h3>
+        <p> <%= teacher.last_name %> </p>
+        <p> <%= teacher.age %> </p>
+        <p> <%= teacher.salary%> </p>
+        <p> <%= teacher.subject%> </p>
+        <a href="/teachers/<%= teacher.id %>"> DELETE</a>
+    <% end %>
+ </div>

@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
   end
 
   def create
-    Course.create(subject: params[:subject], time_completion: params[:time_completion], description: params[:describe])
+    Course.create(subject: params[:subject], time_completion: params[:time_completion], description: params[:description])
     redirect_to '/courses'
   end
 
@@ -13,7 +13,7 @@ class CoursesController < ApplicationController
 
   def destroy
     @courses = Course.find(params[:id])
-      @courses.destroy
+    @courses.destroy
       redirect_to '/courses'
   end
 end

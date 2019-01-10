@@ -44,6 +44,8 @@ Rails.application.routes.draw do
 
   # teachers__________
   get '/teachers' =>'teachers#index'
+  post '/teachers' => 'teachers#create'
+  get '/teachers/:id' => 'teachers#destroy'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
