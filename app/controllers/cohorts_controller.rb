@@ -19,7 +19,9 @@ class CohortsController < ApplicationController
     def update
       raise params.inspect
       @cohorts = Cohort.find(params[:id])
-      @cohorts.update(name: params[:name], start_date: params[:start_date], end_date: params[:end_date])
+      # @cohorts.update(name: params[:name], start_date: params[:start_date], end_date: params[:end_date])
+      @cohorts.update(cohorts_params)
+      @cohorts.save
       redirect_to cohorts_path(@cohorts)
       # redirect_to '/cohorts'
     end
